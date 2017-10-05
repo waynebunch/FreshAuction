@@ -1,5 +1,5 @@
 const express = require('express')
-const mongoose = require('mongoose');
+const mongoose = require('mongoose')
 mongoose.Promise = global.Promise
 const userController = require('./controllers/userController')
 
@@ -11,7 +11,7 @@ mongoose.connect('mongodb://localhost/freshauction', {
     useMongoClient: true
 })
 
-app.get('/', userController.createUser)
+app.get('/register', userController.showRegister)
 
 //make a route app.post('/register', userController) that will post to register.pug and send info there
 
