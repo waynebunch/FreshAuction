@@ -12,6 +12,7 @@ mongoose.connect('mongodb://localhost/freshauction', {
 })
 
 app.get('/register', userController.showRegister)
+app.post('/register', )
 
 //make a route app.post('/register', userController) that will post to register.pug and send info there
 
