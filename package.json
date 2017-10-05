@@ -1,0 +1,24 @@
+{
+  "name": "fresh-auction",
+  "version": "0.0.1",
+  "description": "Auction with a Fresh Take",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/waynebunch/FreshAuction.git"
+  },
+  "author": "Wayne Bunch",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/waynebunch/FreshAuction/issues"
+  },
+  "homepage": "https://github.com/waynebunch/FreshAuction#readme",
+  "dependencies": {
+    "express": "^4.16.1",
+    "mongoose": "^4.11.14",
+    "pug": "^2.0.0-rc.4"
+  }
+}
