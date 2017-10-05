@@ -1,0 +1,17 @@
+extends layout
+
+block content
+  if firstName
+    h2= 'Thanks for joining the site ' + firstName + '.  Please login!'
+    label(for="email") Email Address
+    input(type="email" name="email")
+    label(for="password") Password
+    input(type="password" name="password")
+    input.button(type="submit" value="Log In →")
+  else
+    h2 Welcome to Fresh Auction.  Please login now!
+    label(for="email") Email Address
+    input(type="email" name="email")
+    label(for="password") Password
+    input(type="password" name="password")
+    input.button(type="submit" value="Log In →")
