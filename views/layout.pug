@@ -1,8 +1,15 @@
 html
   head
     title= title
+    style
+      include ../public/css/templateStyle.css
   body
     block header
     block messages
+      if locals.flashes
+        - const categories = Object.keys(locals.flashes)
+        each category in categories
+          each message in flashes[category]
+            p= message
     block content
     block scripts

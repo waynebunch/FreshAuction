@@ -1,0 +1,15 @@
+body {
+    background-color: black;
+    color: orangered;
+}
+
+.wrapper {
+    background-color: orangered;
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.header, .main, .nav, .aside, .footer {
+    flex: 1 100%;
+}
+
