@@ -6,7 +6,7 @@ const mongodbErrorHandler = require('mongoose-mongodb-errors')
 const validator = require('validator')
 
 const UserSchema = new Schema({
-    id: ObjectId,
+    //id: ObjectId,
     email: {
         type: String,
         unique: true,
@@ -36,6 +36,6 @@ const UserSchema = new Schema({
 })
 
 UserSchema.plugin(passportLocalMongoose, { usernameField: 'email' })
-UserSchema.plugin(mongodbErrorHandler)
+//UserSchema.plugin(mongodbErrorHandler)
 
 module.exports = mongoose.model('User', UserSchema)

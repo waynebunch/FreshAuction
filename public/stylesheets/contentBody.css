@@ -1,0 +1,13 @@
+@import url("https://fonts.googleapis.com/css?family=Indie+Flower");
+.bodyWrapper {
+  display: flex;
+  flex-direction: row;
+}
+.leftColumn,
+.rightColumn {
+  flex: 1;
+}
+.middleColumn {
+  flex: 3;
+  text-align: center;
+}

@@ -1,10 +1,19 @@
+doctype html
 html
   head
-    title= title
-    style
-      include ../public/css/templateStyle.css
+    title= h.siteName
+    link(rel='stylesheet', href='/stylesheets/header.css', type='text/css')
+    link(rel='stylesheet', href='/stylesheets/templateStyle.css', type='text/css')
+    link(rel='stylesheet', href='/stylesheets/contentBody.css', type='text/css')
+    meta(name='viewport' content='width=device-width, initial-scale=1')
   body
     block header
+      .wrapper
+        nav.nav
+          each item in h.menu
+            li.nav_item
+              a.nav_item__line(href=item.slug)
+                img(src=item.icon) 
     block messages
       if locals.flashes
         - const categories = Object.keys(locals.flashes)

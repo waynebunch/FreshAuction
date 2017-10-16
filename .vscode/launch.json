@@ -1,24 +1,29 @@
 {
         "version": "0.2.0",
         "configurations": [
-        {
-            "type": "chrome",
-            "request": "attach",
-            "name": "Attach to Chrome",
-            "port": 9222,
-            "webRoot": "${workspaceRoot}"
-        },
-        {
-            "type": "node",
-            "request": "launch",
-            "name": "Launch Program",
-            "program": "${workspaceRoot}/app.js"
-        },
             {
-                "type": "node",
+                "type": "chrome",
+                "request": "attach",
+                "name": "Attach to Chrome",
+                "port": 9222,
+                "webRoot": "${workspaceRoot}"
+            },
+            {
+                "type": "chrome",
                 "request": "launch",
-                "name": "Launch Program",
-                "program": "${workspaceRoot}\\app.js"
-            }
+                "name": "Launch Chrome",
+                "url": "127.0.0.1:9222/48a2d7b4-830d-45bc-bfac-bff830fd3ca3",
+                "webRoot": "${workspaceRoot}/app.js"
+            },
+           {
+               "type": "node",
+               "request": "launch",
+               "name": "nodemon",
+               "runtimeExecutable": "nodemon",
+               "program": "${workspaceFolder}/app.js",
+               "restart": true,
+               "console": "integratedTerminal",
+               "internalConsoleOptions": "neverOpen"
+           }
         ]
     }
