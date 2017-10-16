@@ -1,5 +1,6 @@
 const express = require('express')
 const mongoose = require('mongoose')
+require('dotenv').config({ path: 'variables.env' });
 mongoose.Promise = global.Promise
 const userController = require('./controllers/userController')
 const authController = require('./controllers/authController')
@@ -13,11 +14,11 @@ const helpers = require('./helpers')
 const stylus = require('stylus')
 const nib = require('nib')
 require('./handlers/passport')
-require('dotenv').config({ path: 'variables.env' });
 
 mongoose.connect(process.env.DATABASE, {
     useMongoClient: true
 })
+
 const app = express()
 
 app.use(stylus.middleware({
@@ -36,9 +37,6 @@ app.set('views', path.join(__dirname, 'views'))
 app.set('view engine', 'pug')
 app.use(express.static(path.join(__dirname, 'public')))  
 
-
-
-
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(expressValidator())
@@ -49,7 +47,6 @@ app.use(session({
     saveUninitialized: false
 }))
 
-
 app.use(passport.initialize()) 
 app.use(passport.session()) 
 app.use(flash())
@@ -59,6 +56,7 @@ app.use((req, res, next) => {
     res.locals.flashes = req.flash()
     res.locals.user = req.user || null
     res.locals.currentPath = req.path
+    res.locals.newsurl = process.env.NEWSURL
     next()
 })
 

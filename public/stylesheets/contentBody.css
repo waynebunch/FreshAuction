@@ -5,9 +5,28 @@
 }
 .leftColumn,
 .rightColumn {
+  display: flex;
+  flex-direction: column;
   flex: 1;
 }
 .middleColumn {
   flex: 3;
+  text-align: center;
+}
+.rightColumn {
+  background-color: #d3d3d3;
+}
+.articleWrapper {
+  border-bottom: 1px solid #ff4500;
+}
+.title {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 15px;
+  text-align: center;
+}
+.newsTitle {
+  text-decoration: none;
+}
+.newsDiv {
   text-align: center;
 }

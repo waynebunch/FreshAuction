@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/waynebunch/FreshAuction#readme",
   "dependencies": {
+    "axios": "^0.16.2",
     "body-parser": "^1.18.2",
     "canvas": "^1.6.7",
     "connect-flash": "^0.1.1",
