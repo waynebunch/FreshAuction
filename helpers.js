@@ -8,10 +8,18 @@ exports.test = () => {
 }
 
 exports.menu = [
-    { slug: '/home', title: 'Home', icon: 'svg/004-home.svg'},
+    { slug: '/', title: 'Home', icon: 'svg/004-home.svg'},
     { slug: '/tutorials', title: 'Tutorials', icon: 'svg/003-educational-video.svg'},
     { slug: '/services', title: 'Services', icon: 'svg/001-settings-tools.svg'},
     { slug: '/contact', title: 'Contact', icon: 'svg/speech-bubble.svg'}
+]
+
+exports.whatImDoing = [
+    { url: '/blog/beginning', 
+    title: 'emptyArray From Scratch', 
+    description: 'Decided to build it from scratch',
+    long: 'sadlkjfslkdajfjsda;kfjsdkaljfljsadlkfjsld;fj;lsdajfkjas;fjsakldjf;sadf',
+    date: 'Today'}
 ]
 
 exports.newsFeed = axios.get(process.env.NEWSURL)
@@ -36,12 +44,4 @@ exports.newsFeed = axios.get(process.env.NEWSURL)
     .catch(err => {
         console.log(err)
     })
-
-exports.whatImDoing = [
-    { title: 'emptyArray From Scratch', 
-      description: 'Since beginning web development, I\'ve always wanted to build my site from scratch.',
-      author: 'Wayne',
-      date: Date.now()
-    }
-]
 

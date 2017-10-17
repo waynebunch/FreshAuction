@@ -3,11 +3,15 @@ extends layout
 block content
   .bodyWrapper
     .leftColumn
-      each item in h.whatImDoing  
-        span= item.title
-        span= item.description
-        span= item.author
-        span= item.date
+      .newsDiv
+        h2.newsH2= 'What I\'m Doing'
+        each item in h.whatImDoing  
+          .title
+            span= item.title
+          .description
+            span= item.description
+          .date
+            span= item.date
     .middleColumn
       if user
         h2= 'Welcome to emp[ ]y ' + user.firstName + '.'
@@ -19,12 +23,13 @@ block content
         h2.newsH2= 'Technology News'
         each item in h.articles
           .articleWrapper
+            .image
+              img.image--line(src=item.urlToImage)
             .title
               a.newsTitle(href=item.url target='_blank')
                 span= item.title
             .description
               span= item.description
-            //img(src=item.urlToImage)
             .author
               span= item.author
 
