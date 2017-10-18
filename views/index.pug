@@ -1,35 +1,26 @@
 extends layout
 
 block content
-  .bodyWrapper
-    .leftColumn
-      .newsDiv
-        h2.newsH2= 'What I\'m Doing'
-        each item in h.whatImDoing  
+  .body-wrapper
+    .background-video
+      .left-empty
+      video.top-video(playsinline autoplay loop)
+        source(src='img/background.mp4' type='video/mp4')
+      .right-empty
+    .news-div
+      .news-h2-wrapper
+        .h2-div
+        .h2-div
+          h2.newsH2= 'Technology News'
+        .h2-div
+      each item in h.articles
+        .article-wrapper
+          //- .image
+          //-   img.image--line(src=item.urlToImage)
           .title
-            span= item.title
+            a.newsTitle(href=item.url target='_blank')
+              span= item.title
           .description
             span= item.description
-          .date
-            span= item.date
-    .middleColumn
-      if user
-        h2= 'Welcome to emp[ ]y ' + user.firstName + '.'
-      else
-        h2= 'Welcome to emp[ ]y'
-      iframe(type='text/html' width='640', height='360' src='https://www.youtube.com/embed/OUdsl_sAAVc' frameborder='0')
-    .rightColumn
-      .newsDiv
-        h2.newsH2= 'Technology News'
-        each item in h.articles
-          .articleWrapper
-            .image
-              img.image--line(src=item.urlToImage)
-            .title
-              a.newsTitle(href=item.url target='_blank')
-                span= item.title
-            .description
-              span= item.description
-            .author
-              span= item.author
-
+          .author
+            span= item.author

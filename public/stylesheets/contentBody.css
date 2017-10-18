@@ -1,41 +1,37 @@
 @import url("https://fonts.googleapis.com/css?family=Indie+Flower");
-.bodyWrapper {
+.body-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+.background-video {
   display: flex;
   flex-direction: row;
 }
-.leftColumn,
-.rightColumn {
-  display: flex;
-  flex-direction: column;
+.left-empty,
+.right-empty {
   flex: 1;
-  background-color: #d3d3d3;
 }
-.middleColumn {
-  flex: 3;
-  text-align: center;
-  background-image: url("../img/background.png");
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+.top-video {
+  flex: 4;
 }
-.articleWrapper {
-  border-bottom: 1px solid #ff4500;
+.background-video>video {
+  max-height: 300px;
+  overflow: auto;
 }
-.title {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  font-size: 15px;
-  text-align: center;
+.news-h2-wrapper {
+  display: flex;
+  flex-direction: row;
 }
-.newsTitle {
-  text-decoration: none;
+.h2-div {
+  flex: 1;
 }
-.newsDiv {
-  text-align: center;
+.news-div {
+  display: flex;
+  flex-direction: row;
+  border: 1px solid #ff0;
 }
-.image {
-  margin-top: 5px;
-}
-.image--line {
-  max-height: 50px;
+.article-wrapper {
+  flex: 1 100%;
+  overflow: auto;
+  max-width: 20%;
 }

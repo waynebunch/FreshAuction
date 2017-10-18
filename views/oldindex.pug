@@ -1,0 +1,37 @@
+extends layout
+
+block content
+  .background-video
+    video(playsinline autoplay loop)
+      source(src='img/background.mp4' type='video/mp4')
+  .bodyWrapper
+    .leftColumn
+      .newsDiv
+        h2.newsH2= 'What I\'m Doing'
+        each item in h.whatImDoing  
+          .title
+            span= item.title
+          .description
+            span= item.description
+          .date
+            span= item.date
+    .middleColumn
+      if user
+        h2= 'Welcome to emp[ ]y ' + user.firstName + '.'
+      else
+        h2= 'Welcome to emp[ ]y'
+    .rightColumn
+      .newsDiv
+        h2.newsH2= 'Technology News'
+        each item in h.articles
+          .articleWrapper
+            .image
+              img.image--line(src=item.urlToImage)
+            .title
+              a.newsTitle(href=item.url target='_blank')
+                span= item.title
+            .description
+              span= item.description
+            .author
+              span= item.author
+

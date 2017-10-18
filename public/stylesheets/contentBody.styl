@@ -1,42 +1,36 @@
 @import url('https://fonts.googleapis.com/css?family=Indie+Flower')
 
-.bodyWrapper
-  display: flex
-  flex-direction: row 
-
-.leftColumn, .rightColumn
+.body-wrapper
   display: flex
   flex-direction: column
-  flex: 1 
-  background-color: lightgray
 
-.middleColumn
-  flex: 3 
-  text-align: center
-  background-image: url('../img/background.png')
-  background-attachment: fixed
-  background-position: center
-  background-repeat: no-repeat
-  background-size: cover
+.background-video
+  display: flex
+  flex-direction: row
 
+.left-empty, .right-empty
+  flex: 1
 
+.top-video
+  flex: 4
 
-.articleWrapper
-  border-bottom: 1px solid orangered
+.background-video>video
+  max-height: 300px
+  overflow: auto
 
-.title
-  font-family: Verdana, Geneva, Tahoma, sans-serif
-  font-size: 15px
-  text-align: center
+.news-h2-wrapper
+  display: flex
+  flex-direction: row
 
-.newsTitle
-  text-decoration: none
+.h2-div
+  flex: 1
 
-.newsDiv
-  text-align: center
+.news-div
+  display: flex
+  flex-direction: row
+  border: 1px solid yellow
 
-.image
-  margin-top: 5px
-
-.image--line
-  max-height: 50px 
+.article-wrapper
+  flex: 1 100%
+  overflow: auto
+  max-width: 20%
