@@ -1,0 +1,30 @@
+.nav-wrapper {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+}
+.nav-item-blank {
+  flex: 1 100%;
+  background-color: #b3e5fc;
+  opacity: 0;
+}
+.nav-item {
+  flex: 1 100%;
+  background-color: #039be5;
+}
+.nav-item-first {
+  flex: 1 100%;
+  border-radius: 20px 0px 0px 20px;
+  background-color: #039be5;
+}
+.nav-item-last {
+  flex: 1 100%;
+  border-radius: 0px 20px 20px 0px;
+  background-color: #039be5;
+}
+.nav-img {
+  max-height: 50px;
+}
+.sitename {
+  text-align: center;
+}

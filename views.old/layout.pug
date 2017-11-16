@@ -1,0 +1,69 @@
+doctype html
+html
+  head
+    title= h.siteName
+    link(rel='stylesheet', href='/stylesheets/contentBody.css', type='text/css')
+    link(rel='stylesheet', href='/stylesheets/header.css', type='text/css')
+    link(rel='stylesheet', href='/stylesheets/templateStyle.css', type='text/css')
+    meta(name='viewport' content='width=device-width, initial-scale=1')
+  body
+    block header
+      h1.sitename= 'emp[ ]y'
+    block navigation
+      .nav-wrapper
+        each item in h.menu
+          if item.hasImage === true
+            if item.title === 'Home'
+              .nav-item-first
+                a(href=item.slug)
+                  img.nav-img(src=item.icon)
+            else if item.title === 'Support'
+              .nav-item-last
+                a(href=item.slug)
+                  img.nav-img(src=item.icon)
+            else
+              .nav-item
+                a(href=item.slug)
+                  img.nav-img(src=item.icon) 
+          else
+            .nav-item-blank
+              a(href=item.slug)
+                img.nav-img(src=item.icon)
+    block messages
+      if locals.flashes
+        - const categories = Object.keys(locals.flashes)
+        each category in categories
+          each message in flashes[category]
+            p= message
+    block content
+      .body-wrapper
+        block left-column
+          .left-column
+            each item in h.leftColumn
+              .left-column--div
+                img.me(src=item.img)
+                h2= item.name
+                h3= item.address
+                h3= item.email
+                h3= item.phone
+                h3= item.certs
+                each item2 in item.description
+                  li.li-description= item2
+        block middle-column
+        block right-column
+          .right-column
+            each item in h.articles
+              .right-column--div
+                li
+                  a(href=item.url target='__blank') 
+                    h3= item.title
+                li= item.description
+                li= item.author
+    block scripts
+      script(src='js/menu.js')
+    block footer
+      .footer
+        .footer--div
+        .footer--div
+          h5= '2017 emptyArray LLC.  All Rights Reserved'
+        .footer--div

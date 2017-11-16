@@ -1,0 +1,18 @@
+extends layout
+
+block middle-column
+      .middle-column
+        each item in h.content
+          if item.video === true
+            .middle-column--div
+              h2= item.title
+              video.middle-column--video(controls)
+                source(src='img/cmdline.mp4')
+          else if item.video === false 
+            .middle-column--div
+              h2= item.title
+              each item2 in item.content
+                li= item2
+              if item.support === true
+                button.support-btn Get Support Now!
+

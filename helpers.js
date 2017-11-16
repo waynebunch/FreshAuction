@@ -1,47 +1,51 @@
-const fs = require('fs')
-const axios = require('axios')
-
-exports.siteName = 'emptyArray'
-
-exports.test = () => {
-    console.log('test')
-}
-
-exports.menu = [
-    { slug: '/', title: 'Home', icon: 'svg/004-home.svg'},
-    { slug: '/tutorials', title: 'Tutorials', icon: 'svg/003-educational-video.svg'},
-    { slug: '/services', title: 'Services', icon: 'svg/001-settings-tools.svg'},
-    { slug: '/contact', title: 'Contact', icon: 'svg/speech-bubble.svg'}
+exports.leftColumn = [
+    { img: 'img/me.jpg', 
+      name: 'Wayne Bunch',
+      social: [
+          { img: 'svg/003-youtube.svg'},
+          { img: 'svg/004-twitter.svg'},
+          { img: 'svg/005-facebook.svg'},
+          { img: 'svg/006-instagram.svg'}
+      ],
+      email: 'waynebunch2@gmail.com',
+      address: 'Eugene, OR',
+      certs: 'CCNA Certified',
+    }
 ]
 
-exports.whatImDoing = [
-    { url: '/blog/beginning', 
-    title: 'emptyArray From Scratch', 
-    description: 'Decided to build it from scratch',
-    long: 'sadlkjfslkdajfjsda;kfjsdkaljfljsadlkfjsld;fj;lsdajfkjas;fjsakldjf;sadf',
-    date: 'Today'}
+
+exports.content = [
+    {  video: false, support: true, title: '◀ --==[Request Support]==-- ▶', src: '', author: 'Wayne Bunch',
+       content: [
+           'Virus Removal: $50 service fee + subscription to suggested virus protection (Symantec)',
+           'Computer Cleanup: $50 flat service fee',
+           'IT Consulting and Network Engineering',
+           'Contracts available for managed services',
+           'IT Security: Ransomware, Malware Protection, Backup Services'
+       ],
+       img: [
+           {src: 'svg/019-server.svg'},
+           {src: 'svg/012-wifi.svg'},
+           {src: 'svg/017-router.svg'},
+           {src: 'svg/021-secure-database.svg'}
+       ]
+    },
+    {  video: true, title: '◀ --==[Command Line Tutorial]==-- ▶', src: 'img/cmdline.mp4', author: 'Wayne Bunch', content: ''},
+    {  video: true, title: '◀ --==[Command Line Tutorial]==-- ▶', src: 'img/cmdline.mp4', author: 'Wayne Bunch', content: ''},
+    {  video: true, title: '◀ --==[Command Line Tutorial]==-- ▶', src: 'img/cmdline.mp4', author: 'Wayne Bunch', content: ''},
+    {  video: true, title: '◀ --==[Command Line Tutorial]==-- ▶', src: 'img/cmdline.mp4', author: 'Wayne Bunch', content: ''},
+    {  video: true, title: '◀ --==[Command Line Tutorial]==-- ▶', src: 'img/cmdline.mp4', author: 'Wayne Bunch', content: ''},
+    {  video: true, title: '◀ --==[Command Line Tutorial]==-- ▶', src: 'img/cmdline.mp4', author: 'Wayne Bunch', content: ''}
 ]
 
-exports.newsFeed = axios.get(process.env.NEWSURL)
-    .then(response => {
-        const articles = response.data.articles
-        const finishedArticles = []
-        articles.forEach(element => {
-            finishedArticles.push({
-                author: element.author,
-                title: element.title,
-                description: element.description,
-                url: element.url,
-                urlToImage: element.urlToImage,
-                publishedAt: element.publishedAt
-            })
-        })
-        return finishedArticles
-    })
-    .then(data => {
-        exports.articles = data
-    })
-    .catch(err => {
-        console.log(err)
-    })
+exports.requestSupport = [
+    '$100/hour in 15 minute increments.  Example:  15 minutes = $25',
+    'Remote or onsite support available',
+    'Installation, modification, management of equipment'
+]
 
+exports.suggestedLinks = [
+    { url: 'https://www.malwarebytes.com/', title: 'Malwarebytes'},
+    { url: 'https://www.bleepingcomputer.com/download/roguekiller/', title: 'RougeKiller'},
+    { url: 'https://www.piriform.com/ccleaner/download', title: 'CCleaner'}
+]

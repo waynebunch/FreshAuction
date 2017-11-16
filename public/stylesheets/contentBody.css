@@ -1,37 +1,91 @@
-@import url("https://fonts.googleapis.com/css?family=Indie+Flower");
-.body-wrapper {
+.content-wrapper {
+  display: flex;
+  flex-direction: row;
+  margin: 115px 0px 0px 0px;
+}
+.left-column {
   display: flex;
   flex-direction: column;
-}
-.background-video {
-  display: flex;
-  flex-direction: row;
-}
-.left-empty,
-.right-empty {
-  flex: 1;
-}
-.top-video {
-  flex: 4;
-}
-.background-video>video {
-  max-height: 300px;
+  width: 15%;
+  text-align: center;
   overflow: auto;
 }
-.news-h2-wrapper {
+.everything-div {
   display: flex;
   flex-direction: row;
+  width: 85%;
+  flex-wrap: wrap;
+  padding: 0% 0% 1% 5%;
 }
-.h2-div {
-  flex: 1;
+.everything-div--inside {
+  text-align: center;
+  margin: 10px 10px 10px 10px;
+  padding: 10px 0px 10px 0px;
+  width: 45%;
+  overflow: hidden;
+  background-color: #232222;
+  border: 1px solid #fb6422;
 }
-.news-div {
-  display: flex;
-  flex-direction: row;
-  border: 1px solid #ff0;
+.everything-div--inside>li {
+  list-style: none;
+  margin: 0px 0px 10px 0px;
 }
-.article-wrapper {
+.searchbox {
   flex: 1 100%;
-  overflow: auto;
-  max-width: 20%;
+  text-align: center;
+}
+.me {
+  max-width: 50%;
+}
+.left-column--div {
+  display: flex;
+  flex-direction: column;
+  padding: 1% 1% 1% 1%;
+  margin: 20px 0px 0px 0px;
+}
+.everything-video {
+  max-width: 90%;
+}
+.intro-me-div {
+  margin-bottom: 5px;
+}
+#social-icons {
+  display: flex;
+  flex-direction: row;
+}
+.social-div {
+  flex: 1;
+}
+.social {
+  max-width: 60%;
+}
+.entry-title {
+  color: #fb6422;
+}
+.remote-images--wrapper {
+  display: flex;
+  flex-direction: row;
+}
+.remote-images {
+  margin-top: 20px;
+  flex: 1;
+  width: 23%;
+}
+.remote-images>img {
+  max-height: 50px;
+}
+.request-support-btn {
+  margin-top: 70px;
+  background-color: #fb6422;
+  border: none;
+  height: 30px;
+  width: 300px;
+  color: #fff;
+  border-radius: 10px;
+}
+.links {
+  text-decoration: none;
+}
+.links>li {
+  list-style: none;
 }

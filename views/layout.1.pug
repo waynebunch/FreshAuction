@@ -8,18 +8,16 @@ html
     link(rel='stylesheet', href='/stylesheets/templateStyle.css', type='text/css')
   body
     block header
-      .logo-wrapper
-        .logo-divs.logo-edges
-        .logo-divs#e 
-          .center-align
-            h1= 'e  m  p  ['
-        .logo-divs#expanded-logo-div
-          .center-align
-            h1#randomwwd= ''
-        .logo-divs#tr 
-          .center-align
-            h1= ']  y'
-        .logo-divs.logo-edges
+      .header-wrapper
+        .header-divs.blank
+        .header-divs.colored
+          .header-divs-content
+            img.logo-img(src='svg/logo.png')
+          .color-two
+            .color-one
+              .header-divs-content.span-width
+                span.span-description#span-description= ''
+        .header-divs.blank
     block content
       .content-wrapper
         block left

@@ -1,0 +1,75 @@
+const fs = require('fs')
+const axios = require('axios')
+
+exports.siteName = 'emp[ ]y'
+
+exports.test = () => {
+    console.log('test')
+}
+
+exports.menu = [
+    {},
+    {},
+    {},
+    { slug: '/', title: 'Home', icon: 'svg/004-home.svg', hasImage: true},
+    { slug: '/tutorials', title: 'Tutorials', icon: 'svg/003-educational-video.svg', hasImage: true},
+    { slug: '/support', title: 'Support', icon: 'svg/speech-bubble.svg', hasImage: true},
+    {},
+    {},
+    {}
+]
+
+exports.leftColumn = [
+    { img: 'img/me.jpg', 
+      name: 'Wayne Bunch',
+      email: 'waynebunch2@gmail.com',
+      phone: '(541)799-5891',
+      address: 'Eugene, OR',
+      certs: 'CCNA Certified',
+      description: [
+         'RansomWare, Virus, Adware Protection',
+         'Network Performance',
+         'Nework Security - IDS, IPS, Firewalls',
+         'Active Directory',
+         'Remote and Onsite Support',
+         'Windows, Linux, Apple',
+         'Virtual Private Networks (VPN)',
+         'Web Design',
+         'Consultant / Teacher'
+      ]
+    }
+]
+
+exports.content = [
+    {  video: false, support: true, title: 'Request Live Support Now', img: '', author: 'Wayne Bunch',
+       content: [
+           '$100/hour in 15 minute increments.  Example:  15 minutes = $25',
+           'Remote or onsite support available',
+           'Installation, modification, management of equipment'
+       ]},
+    {  video: true, title: 'Command Line Tutorial', img: '', author: 'Wayne Bunch', content: ''},
+    {  video: false, title: 'First Blog Post - Going Live!', author: 'Wayne Bunch', content: ''}
+]
+
+exports.newsFeed = axios.get(process.env.NEWSURL)
+.then(response => {
+    const articles = response.data.articles
+    const finishedArticles = []
+    articles.forEach(element => {
+        finishedArticles.push({
+            author: element.author,
+            title: element.title,
+            description: element.description,
+            url: element.url,
+            urlToImage: element.urlToImage,
+            publishedAt: element.publishedAt
+        })
+    })
+    return finishedArticles
+})
+.then(data => {
+    exports.articles = data
+})
+.catch(err => {
+    console.log(err)
+})
